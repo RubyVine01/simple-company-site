@@ -1,6 +1,7 @@
 import { AppBar, Button, Toolbar, Typography } from "@mui/material";
 import Link from "next/link";
 import React from "react";
+import ContactButton from "./ContactButton";
 
 const Header: React.FC = () => {
   return (
@@ -22,25 +23,7 @@ const Header: React.FC = () => {
         >
           Some Company
         </Typography>
-        <Link href="/contact">
-          <Button
-            variant="contained"
-            sx={{
-              backgroundColor: "#333",
-              color: "#fff",
-              textTransform: "none",
-              fontWeight: "300",
-              fontSize: "1rem",
-              borderRadius: "7px",
-              padding: "5px 50px",
-              "&:hover": {
-                backgroundColor: "#555",
-              },
-            }}
-          >
-            Contact us
-          </Button>
-        </Link>
+        <ContactButton />
       </Toolbar>
     </AppBar>
   );
