@@ -18,7 +18,7 @@ const Header: React.FC = () => {
       >
         <Typography
           variant="h6"
-          sx={{ color: "#000000", fontWeight: "bold", fontSize: "1.5rem" }}
+          sx={{ fontWeight: "bold", fontSize: "1.5rem" }}
         >
           Some Company
         </Typography>
