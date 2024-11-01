@@ -1,4 +1,4 @@
-import { AppBar, Button, Toolbar, Typography } from "@mui/material";
+import { AppBar, Button, colors, Toolbar, Typography } from "@mui/material";
 import Link from "next/link";
 import React from "react";
 import ContactButton from "./ContactButton";
@@ -17,12 +17,17 @@ const Header: React.FC = () => {
           margin: "15px 45px 15px 0",
         }}
       >
-        <Typography
-          variant="h6"
-          sx={{ fontWeight: "500", fontSize: "1.5rem" }}
-        >
-          Some Company
-        </Typography>
+        <Link href="/" passHref>
+          <Typography
+            sx={{
+              color: "#000",
+              fontWeight: "500",
+              fontSize: "1.5rem",
+            }}
+          >
+            Some Company
+          </Typography>
+        </Link>
         <ContactButton />
       </Toolbar>
     </AppBar>
