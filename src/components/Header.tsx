@@ -14,12 +14,12 @@ const Header: React.FC = () => {
         sx={{
           display: "flex",
           justifyContent: "space-between",
-          padding: "30px 20px",
+          margin: "14px 45px 14px 0",
         }}
       >
         <Typography
           variant="h6"
-          sx={{ fontWeight: "bold", fontSize: "1.5rem" }}
+          sx={{ fontWeight: "500", fontSize: "1.5rem" }}
         >
           Some Company
         </Typography>

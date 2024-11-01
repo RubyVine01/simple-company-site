@@ -13,8 +13,8 @@ const ContactButton: React.FC = () => {
           textTransform: "none",
           fontWeight: "300",
           fontSize: "1rem",
-          borderRadius: "7px",
-          padding: "5px 50px",
+          borderRadius: "9px",
+          padding: "2px 48px",
           "&:hover": {
             backgroundColor: "#555",
           },
