@@ -14,7 +14,7 @@ const Header: React.FC = () => {
         sx={{
           display: "flex",
           justifyContent: "space-between",
-          margin: "14px 45px 14px 0",
+          margin: "15px 45px 15px 0",
         }}
       >
         <Typography
