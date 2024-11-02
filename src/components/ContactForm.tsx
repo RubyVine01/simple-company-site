@@ -1,16 +1,49 @@
 "use client";
 
-import React from "react";
-import { Box, Typography, Paper } from "@mui/material";
+import React, { useState } from "react";
+import { Box, Typography } from "@mui/material";
 import { FormProvider, useForm } from "react-hook-form";
 import { FormData, FormInput } from "./FormField";
 import SubmitButton from "./SubmitButton";
+import { useRouter } from "next/navigation";
 
 const ContactForm: React.FC = () => {
   const methods = useForm<FormData>();
+  const router = useRouter();
 
-  const onSubmit = (data: FormData) => {
-    console.log("Form Data:", data);
+  const [serverError, setServerError] = useState<string | null>(null);
+
+  const onSubmit = async (data: FormData) => {
+    setServerError(null); // Сброс общего сообщения об ошибке перед отправкой
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (response.ok) {
+        const result = await response.json();
+        router.push(
+          `/contact/successRes?message=${encodeURIComponent(result.message)}`
+        );
+      } else {
+        // Обрабатываем ошибки с сервера
+        const errorData = await response.json();
+
+        // Общая ошибка
+        setServerError(
+          errorData.error ||
+            "Failed to submit the form. Please check your input."
+        );
+      }
+    } catch (error) {
+      console.error("Error submitting the form:", error);
+      setServerError("An error occurred. Please try again later.");
+    }
   };
 
   return (
@@ -39,7 +72,7 @@ const ContactForm: React.FC = () => {
           borderRadius: "8px",
           maxWidth: "320px",
           width: "100%",
-          backgroundColor: '#fff',
+          backgroundColor: "#fff",
         }}
       >
         <FormProvider {...methods}>
@@ -64,7 +97,16 @@ const ContactForm: React.FC = () => {
               customHeight="80px"
               customPadding="0"
             />
+
             <SubmitButton />
+            {serverError && (
+              <Typography
+                color="error"
+                sx={{ marginTop: "10px", textAlign: "center" }}
+              >
+                {serverError}
+              </Typography>
+            )}
           </form>
         </FormProvider>
       </Box>
