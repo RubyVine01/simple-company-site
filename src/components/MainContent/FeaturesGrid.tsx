@@ -1,19 +1,35 @@
 import React from "react";
-import { Box, Typography, Grid2, Paper } from "@mui/material";
+import { Box, Typography, Grid2 } from "@mui/material";
 import ContactButton from "../ContactButton";
 
 const FeaturesGrid: React.FC = () => {
   return (
-    <Box sx={{ textAlign: "center", margin: " 55px 20px 40px 30px"}}>
+    <Box
+      sx={{
+        textAlign: "center",
+        margin: { xs: "20px", sm: " 55px 20px 40px 30px" },
+      }}
+    >
       <Typography
         variant="h2"
-        sx={{ fontWeight: "bold", fontSize: "3.1rem", marginBottom: "100px" }}
+        sx={{
+          fontWeight: "bold",
+          fontSize: { xs: "2rem", sm: "2.4rem", md: "2.65rem", lg: "3rem" },
+          marginBottom: { xs: "20px", sm: "50px", md: "100px" },
+        }}
       >
-        Also very important title
+        Also very important&nbsp;title
       </Typography>
-      <Grid2 container  rowSpacing={12} columnSpacing={12}  columns={12} component="div"  sx={{
-           marginBottom: '60px', marginLeft: '30px'
-            }}>
+      <Grid2
+        container
+        rowSpacing={{ xs: 2, sm: 6, md: 12 }}
+        columnSpacing={{ xs: 2, sm: 4, md: 10 }}
+        columns={12}
+        component="div"
+        sx={{
+          margin: { xs: "0 0 15px 0", sm: "0 0 30px 0", xl: " 0 0 30px 60px" },
+        }}
+      >
         {[...Array(6)].map((_, index) => (
           <Grid2
             size={{ xs: 12, sm: 6, md: 4 }}
@@ -22,7 +38,7 @@ const FeaturesGrid: React.FC = () => {
               display: "flex",
               flexDirection: "column",
               rowGap: "10px",
-              maxWidth: "300px",
+              margin: { xs: "0 10px", sm: "0" },
             }}
             key={index}
             component="div"
@@ -31,17 +47,20 @@ const FeaturesGrid: React.FC = () => {
               variant="h3"
               sx={{
                 fontWeight: "bold",
-                fontSize: "1.5rem",
+                fontSize: { xs: "1.3rem", sm: "1.5rem" },
               }}
             >
               Title
             </Typography>
             <Typography
               variant="body2"
-              sx={{ color: "#666", fontSize: "1rem" }}
+              sx={{
+                color: "#666",
+                fontSize: { xs: "0.9rem", sm: "1rem" },
+              }}
             >
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
-              mattis, leo et condimentum
+              mattis, leo et&nbsp;condimentum
             </Typography>
           </Grid2>
         ))}

@@ -59,7 +59,11 @@ const ContactForm: React.FC = () => {
     >
       <Typography
         variant="h1"
-        sx={{ fontWeight: "bold", marginTop: "160px", fontSize: "4.5rem" }}
+        sx={{
+          fontWeight: "bold",
+          marginTop: "160px",
+          fontSize: { xs: "2rem", sm: "2.5rem", md: "3rem", lg: "4.5rem" },
+        }}
       >
         Only CTA on the page
       </Typography>

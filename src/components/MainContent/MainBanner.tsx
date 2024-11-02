@@ -8,8 +8,12 @@ const MainBanner: React.FC = () => {
       sx={{
         display: "flex",
         flexDirection: { xs: "column", md: "row" },
-        columnGap: "200px",
-        padding: "30px 30px 85px 30px",
+        columnGap: { md: "125px", md_lg: "150px", lg: "200px" },
+        padding: {
+          xs: "25px 20px",
+          sm: "30px 30px 55px 30px",
+          md: "30px 30px 85px 30px",
+        },
         alignItems: "center",
         backgroundColor: "#f4f4f4",
       }}
@@ -19,14 +23,28 @@ const MainBanner: React.FC = () => {
           variant="h1"
           sx={{
             fontWeight: "bold",
-            fontSize: "3.1rem",
-            marginBottom: "16px",
+            fontSize: {
+              xs: "2.1rem",
+              sm: "2.5rem",
+              md: "2.75rem",
+              lg: "3.1rem",
+            },
+            marginBottom: { xs: "10px", md: "16px" },
           }}
         >
-          Most important title on the page
+          Most important title on&nbsp;the&nbsp;page
         </Typography>
-        <Typography variant="body1">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam mattis, leo et condimentum ultricies, sem urna convallis metus, vel suscipit nibh lacus tincidunt ante.
+        <Typography
+          variant="body1"
+          sx={{
+            fontSize: { xs: "0.9rem", sm: "1rem" },
+            marginBottom: { xs: "16px", md: "0" },
+            textAlign: { xs: "justify", sm: "start" },
+          }}
+        >
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
+          mattis, leo et&nbsp;condimentum ultricies, sem urna convallis metus,
+          vel suscipit nibh lacus tincidunt ante.
         </Typography>
       </Box>
       <Box
@@ -35,7 +53,6 @@ const MainBanner: React.FC = () => {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          border: "1px solid #e0e0e0",
           width: "100%",
         }}
       >

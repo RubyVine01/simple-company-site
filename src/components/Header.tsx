@@ -14,7 +14,7 @@ const Header: React.FC = () => {
         sx={{
           display: "flex",
           justifyContent: "space-between",
-          margin: { xs: "15px 10px", md: "15px 45px 15px 0" },
+          margin: { xs: "10px", md: "15px 45px 15px 0" },
         }}
       >
         <Link href="/" passHref>
@@ -31,8 +31,8 @@ const Header: React.FC = () => {
           <Typography
             sx={{
               color: "#000",
-              fontWeight: "500",
-              fontSize: "1.5rem",
+              fontWeight: "700",
+              fontSize: "1.7rem",
               display: { xs: "block", sm: "none" },
             }}
           >
