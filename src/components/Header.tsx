@@ -14,7 +14,7 @@ const Header: React.FC = () => {
         sx={{
           display: "flex",
           justifyContent: "space-between",
-          margin: "15px 45px 15px 0",
+          margin: { xs: "15px 10px", md: "15px 45px 15px 0" },
         }}
       >
         <Link href="/" passHref>
@@ -23,9 +23,20 @@ const Header: React.FC = () => {
               color: "#000",
               fontWeight: "500",
               fontSize: "1.5rem",
+              display: { xs: "none", sm: "block" },
             }}
           >
             Some Company
+          </Typography>
+          <Typography
+            sx={{
+              color: "#000",
+              fontWeight: "500",
+              fontSize: "1.5rem",
+              display: { xs: "block", sm: "none" },
+            }}
+          >
+            SC
           </Typography>
         </Link>
         <ContactButton />

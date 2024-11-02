@@ -1,26 +1,28 @@
 import { NextResponse } from "next/server";
 
-function jsonErrorResponse(error: string, status: number) {
-  return NextResponse.json({ error }, { status });
-}
+const validateFormData = (name: string, email: string, message: string) => {
+  const errors = [];
+
+  if (!name || !email || !message) errors.push("All fields are required.");
+  if (name.length > 50) errors.push("Name must not exceed 50 characters.");
+  if (message.length > 200)
+    errors.push("Message must not exceed 200 characters.");
+
+  const emailRegex = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
+  if (!emailRegex.test(email)) errors.push("Invalid email format.");
+
+  return errors.length ? errors : null;
+};
 
 export async function POST(req: Request) {
   try {
     const { name, email, message } = await req.json();
-
-    // Валидация полей
-    if (!name || !email || !message) {
-      return jsonErrorResponse("All fields are required.", 400);
-    }
-    if (name.length > 50) {
-      return jsonErrorResponse("Name must not exceed 50 characters.", 400);
-    }
-    const emailRegex = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
-    if (!emailRegex.test(email)) {
-      return jsonErrorResponse("Invalid email format.", 400);
-    }
-    if (message.length > 200) {
-      return jsonErrorResponse("Message must not exceed 200 characters.", 400);
+    const validationErrors = validateFormData(name, email, message);
+    if (validationErrors) {
+      return NextResponse.json(
+        { error: validationErrors.join(" ") },
+        { status: 400 }
+      );
     }
 
     console.log("Received form data:", { name, email, message });
@@ -29,9 +31,9 @@ export async function POST(req: Request) {
     });
   } catch (error) {
     console.error("Error handling request:", error);
-    return jsonErrorResponse(
-      "An unexpected error occurred. Please try again later.",
-      500
+    return NextResponse.json(
+      { error: "An unexpected error occurred. Please try again later." },
+      { status: 500 }
     );
   }
 }
