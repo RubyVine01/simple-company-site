@@ -6,8 +6,9 @@ const FeaturesGrid: React.FC = () => {
   return (
     <Box
       sx={{
+        backgroundColor: "#fff",
         textAlign: "center",
-        margin: { xs: "20px", sm: " 55px 20px 40px 30px" },
+        padding: { xs: "20px", sm: " 55px 20px 40px 30px" },
       }}
     >
       <Typography

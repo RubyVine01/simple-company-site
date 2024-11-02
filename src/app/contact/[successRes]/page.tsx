@@ -11,17 +11,20 @@ const SuccessResponse: React.FC = () => {
   return (
     <Box
       sx={{
-        width: "1200px",
+        width: { xs: "100%", md: "1200px" },
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        backgroundColor: "#f4f4f4",
-        height: "calc(100vh - 95px)",
+        padding: { xs: "30px", md: "0" },
       }}
     >
       <Typography
         variant="h2"
-        sx={{ fontWeight: "bold", fontSize: "2rem", textAlign: "center" }}
+        sx={{
+          fontWeight: "bold",
+          fontSize: { xs: "1.5rem", sm: "1.75rem", md: "2rem" },
+          textAlign: "center",
+        }}
       >
         {message ? message : "Thank you for your submission!"}
       </Typography>

@@ -6,7 +6,6 @@ const CallToActionSection: React.FC = () => {
   return (
     <Box
       sx={{
-        backgroundColor: "#f4f4f4",
         paddingTop: { xs: "40px", sm: "60px", md: "80px" },
         paddingBottom: { xs: "35px", sm: "53px", md: "70px" },
         textAlign: "center",

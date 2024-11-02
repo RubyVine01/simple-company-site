@@ -14,7 +14,7 @@ const ContactButton: React.FC = () => {
           fontWeight: "300",
           fontSize: { xs: "0.9rem", sm: "1rem" },
           borderRadius: "9px",
-          padding:{ xs: "2px 30px", sm: "2px 48px" },
+          padding: { xs: "2px 30px", sm: "2px 48px" },
           "&:hover": {
             backgroundColor: "#555",
           },

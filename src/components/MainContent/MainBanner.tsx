@@ -15,7 +15,6 @@ const MainBanner: React.FC = () => {
           md: "30px 30px 85px 30px",
         },
         alignItems: "center",
-        backgroundColor: "#f4f4f4",
       }}
     >
       <Box sx={{ flex: 13 }}>
@@ -39,7 +38,6 @@ const MainBanner: React.FC = () => {
           sx={{
             fontSize: { xs: "0.9rem", sm: "1rem" },
             marginBottom: { xs: "16px", md: "0" },
-            textAlign: { xs: "justify", sm: "start" },
           }}
         >
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam

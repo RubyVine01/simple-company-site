@@ -49,20 +49,16 @@ const ContactForm: React.FC = () => {
   return (
     <Box
       sx={{
-        width: "1200px",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        backgroundColor: "#f4f4f4",
-        height: "calc(100vh - 95px)",
       }}
     >
       <Typography
         variant="h1"
         sx={{
           fontWeight: "bold",
-          marginTop: "160px",
-          fontSize: { xs: "2rem", sm: "2.5rem", md: "3rem", lg: "4.5rem" },
+          fontSize: { xs: "2.25rem", sm: "2.5rem", md: "3rem", lg: "4.5rem" },
         }}
       >
         Only CTA on the page
