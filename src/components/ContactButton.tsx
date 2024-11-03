@@ -2,6 +2,7 @@ import React from "react";
 import { Button } from "@mui/material";
 import Link from "next/link";
 
+// "Contact us" button that links to the contact page
 const ContactButton: React.FC = () => {
   return (
     <Link href="/contact">

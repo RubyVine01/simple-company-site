@@ -1,6 +1,6 @@
 :root {
-  --primary-color: #333;
-  --secondary-color: #555;
+  --primary-color: #333; /* Primary color for button backgrounds and text */
+  --secondary-color: #555; /* Color for hover states */
 }
 
 * {

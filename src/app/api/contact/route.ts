@@ -15,11 +15,13 @@ const validateFormData = (name: string, email: string, message: string) => {
 };
 
 export async function POST(req: Request) {
+  // Attempt to parse JSON from the request
   try {
     let formData;
     try {
       formData = await req.json();
     } catch {
+      // Return an error if JSON parsing fails
       return NextResponse.json(
         { error: "Invalid JSON format." },
         { status: 400 }
@@ -28,6 +30,7 @@ export async function POST(req: Request) {
 
     const { name, email, message } = formData;
 
+    // Validate form data
     const validationErrors = validateFormData(name, email, message);
     if (validationErrors) {
       return NextResponse.json(
@@ -37,10 +40,13 @@ export async function POST(req: Request) {
     }
 
     console.log("Received form data:", { name, email, message });
+
+    // Respond with a success message on valid submission
     return NextResponse.json({
       message: `Thank you for your interest, ${name}!`,
     });
   } catch (error) {
+    // Log unexpected errors and return a generic error message
     console.error("Error handling request:", error);
     return NextResponse.json(
       { error: "An unexpected error occurred. Please try again later." },

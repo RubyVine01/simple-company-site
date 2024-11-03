@@ -9,10 +9,10 @@ interface YouTubeEmbedProps {
 }
 
 const YouTubeEmbed: React.FC<YouTubeEmbedProps> = ({ videoId }) => {
-  // оптимизация загрузки видео
+  // Set up Intersection Observer for lazy-loading the video
   const { ref, inView } = useInView({
-    triggerOnce: true, // Загружает только один раз при первой видимости
-    threshold: 0.5, // 50% элемента должно быть в области просмотра для загрузки
+    triggerOnce: true, // Loads only once when first in view
+    threshold: 0.5, // 50% of the element must be in view to trigger loading
   });
 
   const opts: YouTubeProps["opts"] = {

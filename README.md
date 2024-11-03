@@ -1,113 +1,91 @@
-# Simple Company Site
+# 🌐 Simple Company Site
 
-## Описание проекта
+A basic two-page web app featuring a homepage and a contact form page.
 
-Это простое двухстраничное веб-приложение, включающее главную страницу и страницу с формой обратной связи. Проект демонстрирует использование React, Next.js и Material UI для создания адаптивного интерфейса с компонентами, доступными для пользователей различных устройств. Backend-часть обрабатывает данные из формы и возвращает подтверждение для пользователя.
 
-## Основные возможности
-Главная страница с встроенным видео, несколькими разделами и кнопками для перехода на страницу с формой.
-Форма обратной связи с валидацией данных на клиенте и сервере.
-Backend для обработки отправки данных формы и генерации ответного сообщения.
-Отложенная загрузка YouTube для улучшения производительности и уменьшения времени LCP (Largest Contentful Paint).
-SEO оптимизация через Open Graph и Twitter Card теги для улучшения видимости в социальных сетях.
-Технологии
-Frontend: Next.js, React, Material UI
-Styling: CSS-in-JS (Material UI sx), глобальные стили через CSS
-Backend: API Routes в Next.js для обработки запросов
-Ленивая загрузка видео: Intersection Observer API
+## ✨ Features
 
-## Установка и запуск проекта
+- Homepage: Static content and navigation.
+- Contact Form: Validates data on both client and server sides.
+- Backend: POST API for form submission and response handling.
+- Lazy Loading YouTube: Enhances performance by delaying video load until visible.
+- SEO Optimization: Includes Open Graph and Twitter Card tags for social media visibility.
 
-### Локальная настройка
 
-1. Склонируйте репозиторий:
+## 🚀 Tech Stack
+
+| Aspect       | Technology                                  |
+|--------------|--------------------------------------------|
+| Frontend     | Next.js, React, Material UI                |
+| Styling      | Material UI’s CSS-in-JS (sx), Global CSS   |
+| Backend      | Next.js API Routes                         |
+| Lazy Load    | Intersection Observer API 
+
+## 🛠 Getting Started
+
+### Local Setup
+
+1. Clone the repository:
 
 ```bash
 git clone https://github.com/RubyVine01/simple-company-site.git
 ```
 
-2.Перейдите в директорию проекта:
+2. Navigate to project directory:
 
 ```bash
 cd simple-company-site
 ```
 
-3. Установите зависимости:
+3. Install dependencies:
 
 bash
 ```bash
 npm install
 ```
 
-4. Запустите проект в режиме разработки:
+4. Run in development mode:
 
 ```bash
 npm run dev
 ```
-5. Откройте браузер и перейдите по адресу http://localhost:3000.
+5. Open your browser at http://localhost:3000.
 
-## Хостинг проекта
-Проект можно развернуть на таких платформах, как Vercel, Netlify, AWS, Azure, или Yandex Cloud. Например, для Vercel:
+## ☁️ Hosting on Vercel:
 
-Войдите в аккаунт Vercel и выберите "Import Project".
-Подключите репозиторий и настройте проект.
-После завершения развертывания получите URL для развернутого сайта.
+1. Log in to Vercel and select "Import Project."
+2. Connect your GitHub repository and configure project settings.
+3. Once deployed, get the site URL from Vercel.
 
-## Стратегии стилизации и производительности
-Стилизация
-Используется Material UI с sx для адаптивной стилизации, что позволяет менять стили в зависимости от размера экрана.
-CSS-in-JS позволяет динамически изменять стиль компонентов и использовать breakpoints для адаптивности.
-Глобальные стили установлены через файл globals.css.
-Оптимизация SEO и производительности
-Open Graph и Twitter Cards: Включены мета-теги для генерации карточек в соцсетях.
-Lazy Loading для YouTube: Видео загружается только при видимости в области просмотра, снижая нагрузку на LCP.
-Отложенная загрузка компонентов: Использование Intersection Observer для улучшения UX и скорости загрузки.
-Лучшие практики доступности: Учитываются иерархии заголовков, доступность полей формы и цветовые контрасты.
-Допущения
-Относительные позиции элементов: Позиции элементов на странице установлены в соответствии с предоставленными макетами, но точные цвета и шрифты могут отличаться.
-Форма обратной связи: Все поля формы обязательны к заполнению, и форма не отправится без валидных данных.
-Обработка ошибок: Сервер отвечает на некорректные данные форм с ошибкой 400, а на случайные ошибки — с ошибкой 500.
-Структура проекта
-/src/app: Содержит страницы и маршруты API для backend-функций.
-/src/components: Отдельные компоненты для организации UI.
-/src/styles/globals.css: Глобальные стили для всего приложения.
-/src/app/api/contact/routes.ts: Обработчик для формы обратной связи, содержащий логику валидации и отправки данных.
-Скриншоты
-Главная страница
-Страница формы обратной связи
-Страница подтверждения отправки
-Контактная информация
-## Getting Started
+## 🎨 Styling and Performance Strategy
 
-First, run the development server:
+### Styling
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- Material UI (sx) for responsive styles based on screen size.
+- CSS-in-JS to enable dynamic style changes.
+- Global CSS through globals.css for base styles.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### SEO & Performance Optimizations
+- Meta Tags: Open Graph and Twitter Cards for enhanced previews in social media.
+- Lazy Loading YouTube: Video loads only when visible, improving load times.
+- Lazy Load Components: Large components (videos, images) load as needed, boosting UX.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Accessibility
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Heading Structure: Organized hierarchy (h1, h2, h3) for easy navigation.
+- ARIA Labels: For improved screen reader support.
+- Color Contrast: Ensures readability and accessibility.
 
-## Learn More
+## 📁 Project Structure
 
-To learn more about Next.js, take a look at the following resources:
+| Path                               | Description                   |
+|------------------------------------|-------------------------------|
+| `/src/app`                         | Pages & API routes            |
+| `/src/components`                  | UI components                 |
+| `/src/styles/globals.css`          | Global CSS styles             |
+| `/src/app/api/contact/routes.ts`   | Contact form API & validation |
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🖼 Mockups
+1. [Main page](https://download.cadexchanger.com/documents/hiring/frontend/main.svg)
+2. [Contact us page with form](https://download.cadexchanger.com/documents/hiring/frontend/form.svg)
+3. [Contact us page after submission](https://download.cadexchanger.com/documents/hiring/frontend/response.svg)

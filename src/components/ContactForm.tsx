@@ -14,7 +14,7 @@ const ContactForm: React.FC = () => {
   const [serverError, setServerError] = useState<string | null>(null);
 
   const onSubmit = async (data: FormData) => {
-    setServerError(null); // Сброс общего сообщения об ошибке перед отправкой
+    setServerError(null);
 
     try {
       const response = await fetch("/api/contact", {
@@ -31,10 +31,8 @@ const ContactForm: React.FC = () => {
           `/contact/successRes?message=${encodeURIComponent(result.message)}`
         );
       } else {
-        // Обрабатываем ошибки с сервера
         const errorData = await response.json();
 
-        // Общая ошибка
         setServerError(
           errorData.error ||
             "Failed to submit the form. Please check your input."
