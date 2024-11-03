@@ -8,8 +8,9 @@ const SubmitButton: React.FC = () => {
       variant="contained"
       color="primary"
       fullWidth
+      aria-label="Submit the form"
       sx={{
-        backgroundColor: "#333",
+        backgroundColor: "var(--primary-color)",
         color: "#fff",
         textTransform: "none",
         fontWeight: "300",
@@ -17,7 +18,7 @@ const SubmitButton: React.FC = () => {
         borderRadius: "9px",
         paddingY: "5px",
         "&:hover": {
-          backgroundColor: "#555",
+          backgroundColor: "var(--secondary-color)",
         },
       }}
     >

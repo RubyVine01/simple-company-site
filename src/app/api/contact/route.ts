@@ -16,7 +16,18 @@ const validateFormData = (name: string, email: string, message: string) => {
 
 export async function POST(req: Request) {
   try {
-    const { name, email, message } = await req.json();
+    let formData;
+    try {
+      formData = await req.json();
+    } catch {
+      return NextResponse.json(
+        { error: "Invalid JSON format." },
+        { status: 400 }
+      );
+    }
+
+    const { name, email, message } = formData;
+
     const validationErrors = validateFormData(name, email, message);
     if (validationErrors) {
       return NextResponse.json(

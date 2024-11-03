@@ -7,8 +7,9 @@ const ContactButton: React.FC = () => {
     <Link href="/contact">
       <Button
         variant="contained"
+        aria-label="Navigate to Contact Us page"
         sx={{
-          backgroundColor: "#333",
+          backgroundColor: "var(--primary-color)",
           color: "#fff",
           textTransform: "none",
           fontWeight: "300",
@@ -16,7 +17,7 @@ const ContactButton: React.FC = () => {
           borderRadius: "9px",
           padding: { xs: "2px 30px", sm: "2px 48px" },
           "&:hover": {
-            backgroundColor: "#555",
+            backgroundColor: "var(--secondary-color)",
           },
         }}
       >

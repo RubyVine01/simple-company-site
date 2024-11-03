@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "@/styles/globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { Box } from "@mui/material";
 
 const metadata: Metadata = {
   title: "Simple Company Site",
@@ -51,7 +52,7 @@ export default function RootLayout({
       </head>
       <body>
         <Header />
-        <main>{children}</main>
+        <Box component="main">{children}</Box>
         <Footer />
       </body>
     </html>

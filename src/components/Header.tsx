@@ -17,7 +17,7 @@ const Header: React.FC = () => {
           margin: { xs: "10px", md: "15px 45px 15px 0" },
         }}
       >
-        <Link href="/" passHref>
+        <Link href="/" passHref aria-label="Navigate to Home page">
           <Typography
             sx={{
               color: "#000",
