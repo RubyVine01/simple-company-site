@@ -1,0 +1,39 @@
+:root {
+  --primary-color: #333; /* Primary color for button backgrounds and text */
+  --secondary-color: #555; /* Color for hover states */
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100vh;
+}
+
+body {
+  margin: 0 auto;
+  font-family: "Roboto", sans-serif;
+  background-color: #fff;
+  color: #000;
+  line-height: 1.6;
+  font-size: 16px;
+  max-width: 1200px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background-color: #f4f4f4;
+}
+
+a {
+  text-decoration: none;
+}

@@ -1,7 +1,16 @@
-import React from 'react'
+import React from "react";
+import MainBanner from "./MainContent/MainBanner";
+import FeaturesGrid from "./MainContent/FeaturesGrid";
+import CallToActionSection from "./MainContent/CallToActionSection";
 
-export default function MainContent() {
+const MainContent: React.FC = () => {
   return (
-    <div>MainContent</div>
-  )
-}
+    <>
+      <MainBanner />
+      <FeaturesGrid />
+      <CallToActionSection />
+    </>
+  );
+};
+
+export default MainContent;

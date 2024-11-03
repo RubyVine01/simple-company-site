@@ -1,36 +1,91 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🌐 Simple Company Site
 
-## Getting Started
+A basic two-page web app featuring a homepage and a contact form page.
 
-First, run the development server:
+
+## ✨ Features
+
+- Homepage: Static content and navigation.
+- Contact Form: Validates data on both client and server sides.
+- Backend: POST API for form submission and response handling.
+- Lazy Loading YouTube: Enhances performance by delaying video load until visible.
+- SEO Optimization: Includes Open Graph and Twitter Card tags for social media visibility.
+
+
+## 🚀 Tech Stack
+
+| Aspect       | Technology                                  |
+|--------------|--------------------------------------------|
+| Frontend     | Next.js, React, Material UI                |
+| Styling      | Material UI’s CSS-in-JS (sx), Global CSS   |
+| Backend      | Next.js API Routes                         |
+| Lazy Load    | Intersection Observer API 
+
+## 🛠 Getting Started
+
+### Local Setup
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/RubyVine01/simple-company-site.git
+```
+
+2. Navigate to project directory:
+
+```bash
+cd simple-company-site
+```
+
+3. Install dependencies:
+
+bash
+```bash
+npm install
+```
+
+4. Run in development mode:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
+5. Open your browser at http://localhost:3000.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## ☁️ Hosting on Vercel:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. Log in to Vercel and select "Import Project."
+2. Connect your GitHub repository and configure project settings.
+3. Once deployed, get the site URL from Vercel.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🎨 Styling and Performance Strategy
 
-## Learn More
+### Styling
 
-To learn more about Next.js, take a look at the following resources:
+- Material UI (sx) for responsive styles based on screen size.
+- CSS-in-JS to enable dynamic style changes.
+- Global CSS through globals.css for base styles.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### SEO & Performance Optimizations
+- Meta Tags: Open Graph and Twitter Cards for enhanced previews in social media.
+- Lazy Loading YouTube: Video loads only when visible, improving load times.
+- Lazy Load Components: Large components (videos, images) load as needed, boosting UX.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Accessibility
 
-## Deploy on Vercel
+- Heading Structure: Organized hierarchy (h1, h2, h3) for easy navigation.
+- ARIA Labels: For improved screen reader support.
+- Color Contrast: Ensures readability and accessibility.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📁 Project Structure
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+| Path                               | Description                   |
+|------------------------------------|-------------------------------|
+| `/src/app`                         | Pages & API routes            |
+| `/src/components`                  | UI components                 |
+| `/src/styles/globals.css`          | Global CSS styles             |
+| `/src/app/api/contact/routes.ts`   | Contact form API & validation |
+
+## 🖼 Mockups
+1. [Main page](https://download.cadexchanger.com/documents/hiring/frontend/main.svg)
+2. [Contact us page with form](https://download.cadexchanger.com/documents/hiring/frontend/form.svg)
+3. [Contact us page after submission](https://download.cadexchanger.com/documents/hiring/frontend/response.svg)
